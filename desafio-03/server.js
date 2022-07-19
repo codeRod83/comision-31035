@@ -10,7 +10,7 @@ class Contenedor {
     async getAll() {
         try {
             const content = await fs.promises.readFile(this.filename, 'utf-8')
-            const data = await JSON.parse(content)
+            const data = JSON.parse(content)
             return JSON.stringify(data)
 
         } catch (error) {
