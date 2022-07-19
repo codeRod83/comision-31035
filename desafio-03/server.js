@@ -34,7 +34,6 @@ class Contenedor {
             console.log(error)
             }
         }
-
 }
 
 const productos = new Contenedor('productos')
