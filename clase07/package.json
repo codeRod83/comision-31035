@@ -1,0 +1,23 @@
+{
+  "name": "comision-31035",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeRod83/comision-31035.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codeRod83/comision-31035/issues"
+  },
+  "homepage": "https://github.com/codeRod83/comision-31035#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
