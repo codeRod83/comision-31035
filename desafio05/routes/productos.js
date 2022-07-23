@@ -2,12 +2,26 @@ const express = require('express')
 const Producto = require('../controllers/producto.controllers')
 const prodsRouter = express.Router()
 
+
 prodsRouter.get('/', (req, res) => {
-    const listaProductos = Producto.mostrarTodos()
-    res.send(listaProductos)
+    res.render('main.hbs')
 })
 
-prodsRouter.get('/:id', (req, res) => {
+prodsRouter.get('/api/productos', (req, res) => {
+    const listaProductos = Producto.mostrarTodos()
+    listaProductos.forEach(producto => {
+        const prod = {
+            title: listaProductos.title,
+            price: listaProductos.price,
+            thumbnail: listaProductos.thumbnail
+        }
+        // return prod
+        res.render('productos.hbs', prod)
+    });
+    // res.send(listaProductos)
+})
+
+prodsRouter.get('/api/productos:id', (req, res) => {
     const { id } = req.params
     const producto = Producto.buscar(parseInt(id))
     if (producto === undefined) {
@@ -16,20 +30,20 @@ prodsRouter.get('/:id', (req, res) => {
     res.json(producto)
 })
 
-prodsRouter.post('/', (req, res) => {
+prodsRouter.post('/api/productos', (req, res) => {
     const { title, price, thumbnail } = req.body
-    const nProducto = Producto.agregar(title, price, thumbnail)
-    res.status(201).json(nProducto)
+    Producto.agregar(title, price, thumbnail)
+    res.status(201).redirect('/')
 })
 
-prodsRouter.put('/:id', (req, res) => {
+prodsRouter.put('/api/productos:id', (req, res) => {
     const { id } = req.params
     const { title, price, thumbnail } = req.body
     const updateProd = Producto.actualizar(parseInt(id), title, price, thumbnail )
     res.status(202).json(updateProd)
 })
 
-prodsRouter.delete('/:id', (req, res) => {
+prodsRouter.delete('/api/productos:id', (req, res) => {
     const { id } = req.params
     const producto = Producto.borrar(parseInt(id))
     if (producto === undefined) {

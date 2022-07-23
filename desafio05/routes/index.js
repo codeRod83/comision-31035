@@ -3,6 +3,6 @@ const router = express.Router()
 const prodsRouter = require('./productos')
 
 
-router.use('/productos', prodsRouter)
+router.use('', prodsRouter)
 
 module.exports = router
