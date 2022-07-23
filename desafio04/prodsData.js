@@ -26,10 +26,12 @@ const updateProd = ( id, title, price, thumbnail ) => {
 }
 
 const delProd = (id) => {
-    const nuevoData = data.forEach((prod, i) => {
-        if (prod.id === id) data.splice(i, 1)
-        });
-        return nuevoData
+    let nuevoData = data.filter(prod => prod.id !== id)
+    if (data.length === nuevoData.length) {
+        nuevoData = undefined
+    }
+    data = nuevoData
+    return nuevoData
 }
 
 module.exports = { getAll, getById, addProd, updateProd, delProd, data }
@@ -59,5 +61,4 @@ const prods = [
 ]
 for (let i = 0; i < prods.length; i++) {
     module.exports.addProd(prods[i].title, prods[i].price, prods[i].thumbnail)
-    // addProd(prods[i].title, prods[i].price, prods[i].thumbnail)
 }

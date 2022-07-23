@@ -32,6 +32,9 @@ prodsRouter.put('/:id', (req, res) => {
 prodsRouter.delete('/:id', (req, res) => {
     const { id } = req.params
     const producto = Producto.borrar(parseInt(id))
+    if (producto === undefined) {
+        res.status(404).json({error : 'producto no encontrado' })
+    }
     res.status(301).json(producto)
 })
 
