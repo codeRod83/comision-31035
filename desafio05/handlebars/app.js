@@ -7,7 +7,7 @@ const PORT = 8080
 app.engine('hbs', handlebars.engine({
     extname: '.hbs',
     defaultLayout: 'index.hbs',
-    layoutsDir: __dirname + '/views/layouts'
+    layoutsDir: __dirname + '/views/layouts',
 }))
 
 app.set('view engine', 'hbs')
