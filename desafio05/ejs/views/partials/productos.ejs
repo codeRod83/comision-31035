@@ -1,0 +1,8 @@
+{{#each lista}}
+	<tr>
+		<th class="text-center align-middle" scope="row">{{this.title}}</th>
+		<td class="text-center align-middle" scope="col">$ {{ this.price }}.00</td>
+		<td class="text-center" scope="col"><img src="{{this.thumbnail}}"></td>
+	</tr>
+	{{/each}}
+	

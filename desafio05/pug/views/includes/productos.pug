@@ -1,0 +1,10 @@
+tbody
+	if lista.length > 0
+			each val in lista
+				tr
+					th(class="text-center align-middle" scope="row")= val.title
+					td(class="text-center align-middle" scope="col")= val.price
+					td(class="text-center align-middle" scope="col"): img(src='/' + val.thumbnail)
+	else
+		tfoot 
+			td(colspan='3') No hay productos

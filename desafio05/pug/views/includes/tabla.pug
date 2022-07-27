@@ -1,0 +1,11 @@
+div(class="container mt-5 w-auto")
+	h1.text-center Vista Productos
+		table(class="fs-4 table table-striped table-primary table-hover table-bordered border-primary mt-4")
+			thead.table-dark 
+				tr
+					th(class="text-center align-middle" scope="col") Nombre
+					th(class="text-center align-middle" scope="col") Precio
+					th(class="text-center align-middle" scope="col") Foto
+			include ./productos
+div(class="d-flex justify-content-center gap-5 mt-4")
+	a(class="btn btn-outline-primary"  href="/") Ingresar Productos

@@ -1,0 +1,23 @@
+div(class="container-sm text-center mt-4 w-auto ")
+	form(class="form text-center form__container d-flex flex-column m-auto gap-3" action="/api/productos" method="post")
+		h1.my-3 Ingreso de Productos
+		div(class="container input-group gap-2")
+			div(class="row input-group gap-2 m-auto")
+				label(class="col-sm-2 input-group-text") Producto
+				input(type="text" name="title" class="col-sm-4 form-control" placeholder="Ingresa Nombre de Producto" required)
+			div(class="row input-group gap-2 m-auto")
+				label(class="col-sm-2 input-group-text") Precio
+				input(type="number" name="price" class="col-sm-4 form-control" placeholder="Ingresa Precio de Producto" required)
+			div(class="row input-group gap-2 m-auto")
+				label(class="col-sm-2 input-group-text" for="inputGroupSelect01") Imagen
+				select(class="form-control form-select col-sm-4" name="thumbnail" required)
+					option(value="") Elige una imagen...
+					option(value="../img/1.png") Laptop
+					option(value="../img/2.png") Monitor
+					option(value="../img/3.png") Mouse
+					option(value="../img/4.png") USB
+					option(value="../img/5.png") Perifericos
+					option(value="../img/6.png") HDD
+		div(class="container d-flex justify-content-center gap-5 my-4")
+			input(type="submit" value="Guardar Producto" class="btn btn-outline-primary")
+			a(href="/api/productos" class="btn btn-outline-info") Lista productos
