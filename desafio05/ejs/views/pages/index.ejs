@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
+	<%- include('../partials/head') %>
 </head>
 <body>
-    {{{body}}}
+	<% if (pagina==='' ) { %>
+		<%- include('../partials/form') %>
+			<% }else{ %>
+				<%- include('../partials/tabla') %>
+					<% } %>
 </body>
 </html>

@@ -2,14 +2,16 @@ const express = require('express')
 const Producto = require('../controllers/producto.controllers')
 const prodsRouter = express.Router()
 
-
+// let pagina = ''
 prodsRouter.get('/', (req, res) => {
-    res.render('main.hbs')
+    let pagina = ''
+    res.render('./index.ejs', {pagina})
 })
 
 prodsRouter.get('/api/productos', (req, res) => {
     const lista = Producto.mostrarTodos()
-    res.render('partials/tabla.hbs', { lista })
+    pagina = 'tabla'
+    res.render('./index.ejs', { lista, pagina })
 })
 
 prodsRouter.post('/api/productos', (req, res) => {

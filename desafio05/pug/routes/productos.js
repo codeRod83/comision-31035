@@ -2,8 +2,8 @@ const express = require('express')
 const Producto = require('../controllers/producto.controllers')
 const prodsRouter = express.Router()
 
-let pagina = ''
 prodsRouter.get('/', (req, res) => {
+    let pagina = ''
     res.render('index.pug')
 })
 

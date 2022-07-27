@@ -4,6 +4,7 @@ const router = require('./routes')
 const PORT = 8080
 
 app.set('view engine', 'ejs')
+app.set('views', './views/pages')
 
 app.use(express.static('public'))
 app.use(express.json())
