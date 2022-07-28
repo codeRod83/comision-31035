@@ -4,20 +4,32 @@ const prodsRouter = express.Router()
 
 // let pagina = ''
 prodsRouter.get('/', (req, res) => {
-    let pagina = ''
-    res.render('./index.ejs', {pagina})
+    try {
+        let pagina = ''
+        res.render('./index.ejs', {pagina})
+	} catch (error) {
+		res.status(500).json({ error: error })
+	}
 })
 
 prodsRouter.get('/api/productos', (req, res) => {
-    const lista = Producto.mostrarTodos()
-    pagina = 'tabla'
-    res.render('./index.ejs', { lista, pagina })
+    try {
+		const lista = Producto.mostrarTodos()
+        pagina = 'tabla'
+        res.render('./index.ejs', { lista, pagina })
+	} catch (error) {
+		res.status(500).json({ error: error })
+	}
 })
 
 prodsRouter.post('/api/productos', (req, res) => {
-    const { title, price, thumbnail } = req.body
-    Producto.agregar(title, price, thumbnail)
-    res.status(201).redirect('/')
+    try {
+		const { title, price, thumbnail } = req.body
+		Producto.agregar(title, price, thumbnail)
+		res.status(201).redirect('/')
+	} catch (error) {
+		res.status(500).json({ error: error })
+	}
 })
 
 module.exports = prodsRouter

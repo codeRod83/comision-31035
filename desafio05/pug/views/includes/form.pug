@@ -1,7 +1,7 @@
-div(class="container-sm text-center mt-4 w-auto ")
-	form(class="form text-center form__container d-flex flex-column m-auto gap-3" action="/api/productos" method="post")
-		h1.my-3 Ingreso de Productos
-		div(class="container input-group gap-2")
+div(class="row text-center mt-4 w-auto ")
+	h1.my-3 Ingreso de Productos
+	form(class="col-12 col-lg-6 form text-center form__container d-flex flex-column m-auto gap-3" action="/api/productos" method="post")
+		div(class="container input-group gap-2 mt-5")
 			div(class="row input-group gap-2 m-auto")
 				label(for="nombre" class="col-sm-2 input-group-text") Producto
 				input(type="text" id="nombre" name="title" class="col-sm-4 form-control" placeholder="Ingresa Nombre de Producto" required)
@@ -9,7 +9,7 @@ div(class="container-sm text-center mt-4 w-auto ")
 				label(for="precio" class="col-sm-2 input-group-text") Precio
 				input(type="number" id="precio" name="price" class="col-sm-4 form-control" placeholder="Ingresa Precio de Producto" required)
 			div(class="row input-group gap-2 m-auto")
-				label(for="foto" class="col-sm-2 input-group-text" for="inputGroupSelect01") Imagen
+				label(for="foto" class="col-sm-2 input-group-text") Imagen
 				select(class="form-control form-select col-sm-4" id="foto" name="thumbnail" required)
 					option(value="") Elige una imagen...
 					option(value="../img/1.png") Laptop
