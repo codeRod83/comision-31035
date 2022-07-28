@@ -32,4 +32,13 @@ prodsRouter.post('/api/productos', (req, res) => {
 	}
 })
 
+prodsRouter.get('/api/vaciar', (req, res) => {
+	try {
+		Producto.borrarTodo()
+		res.status(202).redirect('/api/productos')
+	} catch (error) {
+		res.status(500).json({ error: error })
+	}
+})
+
 module.exports = prodsRouter

@@ -9,6 +9,10 @@ class Producto {
         const nProducto = prodsData.addProd(title, price, thumbnail)
         return nProducto
     }
+    static borrarTodo() {
+        const listaVacia = prodsData.deletAll()
+        return listaVacia
+    }
 }
 
 module.exports = Producto

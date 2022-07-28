@@ -11,7 +11,11 @@ const addProd = (title, price, thumbnail) => {
     return productoNuevo
 }
 
-module.exports = { getAll, addProd, data }
+const deletAll = () => {
+    return data = []
+}
+
+module.exports = { getAll, addProd, deletAll, data }
 
 const prods = [
     {
