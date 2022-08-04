@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <%- include('../partials/head') %>
+</head>
+<body class="container">
+   <% if (pagina==='' ) { %>
+      <%- include('../partials/form') %>
+         <%- include('../partials/chat') %>
+            <% }else{ %>
+               <%- include('../partials/tabla') %>
+                  <% } %>
+</body>
+</html>
